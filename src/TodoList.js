@@ -3,9 +3,9 @@ import './style.css'
 //import axios from 'axios'
 //import Mock from 'mockjs'
 import 'antd/dist/antd.css';
-
+import axios from 'axios'
 import store from './store/index'
-import { getInputChangeAction, getadd_todo_item, getdeleteitem } from './actionCreators'
+import { getInputChangeAction, getadd_todo_item, getdeleteitem, initListAction } from './actionCreators'
 //import { ADD_TODO_ITEM, DELETE_ITEM } from './actionTypes'
 import TodoListUI from './TodoListUI'
 class TodoList extends Component {
@@ -51,6 +51,15 @@ class TodoList extends Component {
     }
     componentDidMount() {
         store.subscribe(this.handleStoreChange);
+        axios.get('/mock.json').then((res) => {
+            let data = res.data;
+            let action = initListAction(data)
+            store.dispatch(action)
+            console.log(res)
+
+        }).catch((err) => {
+            console.log(err)
+        })
 
     }
 }
