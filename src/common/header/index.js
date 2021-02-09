@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux'
-import { SREACH_FOCUS, SREACH_BLUR } from "../../store/actionType"
+import { actionCreators } from './store/index'
 import {
 	HeaderWrapper,
 	Logo,
@@ -49,21 +49,17 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		focused: state.focused
+		focused: state.header.get("focused")
 	}
 }
 const mapDispathToProps = (dispatch) => {
 	return {
 		handleInputFocus() {
-			const action = {
-				type: SREACH_FOCUS
-			};
+			const action = actionCreators.searchFocus();
 			dispatch(action)
 		},
 		handleInputBlur() {
-			const action = {
-				type: SREACH_BLUR
-			};
+			const action = actionCreators.search_blur();
 			dispatch(action)
 		}
 	}
