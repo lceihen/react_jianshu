@@ -82,7 +82,7 @@ export const NavSearch = styled.input.attrs({
 		transition: all .2s ease-out;
 	}
 	&.slide-enter-active {
-		width: 240px;	background-color:grey;
+		width: 240px;
 	}
 	&.slide-exit {
 		transition: all .2s ease-out;
@@ -146,8 +146,13 @@ export const SearchInfoSwitch = styled.span`
 float:right;
 font-size:14px;
 cursor:pointer
-&.spin{
-	transform:rotate(180deg)
+.spin{
+font-size:12px;
+margin-right:2px;
+transition:all .2s ease-in;
+display:block;
+float:left;
+transform-origin:center center;
 }
 `
 export const SearchInfoItem = styled.a`

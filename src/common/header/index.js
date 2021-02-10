@@ -59,7 +59,7 @@ class Header extends Component {
 	}
 
 	render() {
-		const { focused, handleInputFocus, handleInputBlur } = this.props;
+		const { focused, handleInputFocus, handleInputBlur, list } = this.props;
 		return (
 			<HeaderWrapper>
 				<Logo />
@@ -78,7 +78,7 @@ class Header extends Component {
 						>
 							<NavSearch
 								className={focused ? 'focused' : ''}
-								onFocus={handleInputFocus}
+								onFocus={() => handleInputFocus(list)}
 								onBlur={handleInputBlur}
 							></NavSearch>
 						</CSSTransition>
@@ -106,14 +106,16 @@ const mapStateToProps = (state) => {
 		list: state.getIn(['header', 'list']),
 		page: state.getIn(['header', 'page']),
 		totalPage: state.getIn(['header', 'totalPage']),
-		mouseIn: state.getIn(['header', 'mouseIn'])
+		mouseIn: state.getIn(['header', 'mouseIn']),
+
 	}
 }
 
 const mapDispathToProps = (dispatch) => {
 	return {
-		handleInputFocus() {
-			dispatch(actionCreators.getList());
+		handleInputFocus(list) {
+
+			(list.size === 0) && dispatch(actionCreators.getList());
 			dispatch(actionCreators.searchFocus());
 		},
 		handleInputBlur() {
@@ -126,6 +128,8 @@ const mapDispathToProps = (dispatch) => {
 			dispatch(actionCreators.mouseLeave());
 		},
 		handleChangePage(page, totalPage, spin) {
+
+
 			let originAngle = spin.style.transform.replace(/[^0-9]/ig, '');
 			if (originAngle) {
 				originAngle = parseInt(originAngle, 10);
