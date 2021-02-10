@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux-immutable'//组和各个组件的state
 import headerReducer from '../common/header/store/reducer'
 
 const reducer = combineReducers({
