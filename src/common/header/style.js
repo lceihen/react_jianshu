@@ -56,6 +56,7 @@ export const SearchWrapper = styled.div`
 		line-height: 30px;
 		border-radius: 15px;
 		text-align: center;
+	
 		&.focused{
 			background:#777;
 			color:#fff;
@@ -129,6 +130,7 @@ top:56px;
 width:210px;
 padding:0 20px;
 border-radius: 10px;
+background:#fff;
 box-shadow:0 0 8px rgba(0,0,0,.2);
 &.SearchInfo_display{
 	display:none;
