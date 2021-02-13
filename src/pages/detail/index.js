@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { DetailWrapper, Header, Content } from './style'
 import schoolpng from '../../statics/imgs/henshui_school.png'
 import { connect } from 'react-redux'
+import { get_detail_action } from './store/actionCreators'
 class Detail extends Component {
     render() {
         return (
@@ -16,12 +17,19 @@ class Detail extends Component {
             </DetailWrapper>
         )
     }
+    componentDidMount() {
+        this.props.get_detail_info()
+    }
 }
 const mapState = (state) => ({
     title: state.getIn(['detail', 'title']),
     content: state.getIn(['detail', 'content'])
 })
-const mapDispatch = () => ({
-
+const mapDispatch = (dispatch) => ({
+    get_detail_info() {
+        const action = get_detail_action()
+        dispatch(action)
+    }
 })
+
 export default connect(mapState, mapDispatch)(Detail);

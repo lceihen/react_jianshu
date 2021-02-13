@@ -1,5 +1,6 @@
 import { GET_DETAIL_INFO } from './actionType'
 import { fromJS } from 'immutable'
+import axios from 'axios'
 const defaultState = fromJS({
     title: '衡水中学，被外地人占领的高考工厂',
     content: `<div class="article-content"><div class="img-container">
