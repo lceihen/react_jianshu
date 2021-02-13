@@ -1,9 +1,9 @@
-import { fromJS } from 'immutable';
-import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import React, { PureComponent } from 'react'
 import { ListItem, ListInfo, LoadMore } from './../style'
 import { connect } from 'react-redux'
 import { getMoreList } from './../store/actionCreators'
-class List extends Component {
+class List extends PureComponent {
     render() {
         const { list, getMoreList, page } = this.props;
         return (
@@ -11,16 +11,17 @@ class List extends Component {
                 {
                     list.map((item) => {
                         return (
+                            <Link key={item.get("id")} to="/detail">
 
-                            <ListItem key={item.get("id")}>
-                                <img alt="" className='pic' src={item.get("imgUrl")} />
-                                <ListInfo>
-                                    <h3 className='title'>{item.get("title")} </h3>
-                                    <p className='desc'>{item.get("desc")}</p>
-                                </ListInfo>
+                                <ListItem >
+                                    <img alt="" className='pic' src={item.get("imgUrl")} />
+                                    <ListInfo>
+                                        <h3 className='title'>{item.get("title")} </h3>
+                                        <p className='desc'>{item.get("desc")}</p>
+                                    </ListInfo>
 
-                            </ListItem>
-
+                                </ListItem>
+                            </Link>
 
                         )
                     })
