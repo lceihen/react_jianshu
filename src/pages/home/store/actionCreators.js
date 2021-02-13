@@ -1,6 +1,5 @@
-import { CHANGE_HOME_DATA } from './actionType'
+import { CHANGE_HOME_DATA, ADD_ARTICLE_LIST, CHANGE_SCROLL } from './actionType'
 import axios from 'axios'
-import { ADD_ARTICLE_LIST } from './actionType'
 import { fromJS } from 'immutable';
 export const getHomeInfo = () => {
     return (dispatch) => {
@@ -30,3 +29,14 @@ const addHomeList = (list, nextPage) => ({
     list: fromJS(list),
     nextPage
 })
+
+export const ChangeScrollTopShow = (display) => {
+    return (dispatch) => {
+
+        const action = {
+            type: CHANGE_SCROLL,
+            value: display
+        }
+        dispatch(action)
+    }
+}

@@ -1,10 +1,11 @@
 import { fromJS } from 'immutable'//保证store不被修改
-import { CHANGE_HOME_DATA, ADD_ARTICLE_LIST } from './actionType'
+import { CHANGE_HOME_DATA, ADD_ARTICLE_LIST, CHANGE_SCROLL } from './actionType'
 const defaultState = fromJS({
     topicList: [],
     articleList: [],
     recommendList: [],
-    articlePage: 1
+    articlePage: 1,
+    showScroll: false
 })
 const addArticleList = (state, action) => {
     return state.merge({
@@ -16,7 +17,7 @@ const addArticleList = (state, action) => {
 export default (state = defaultState, action) => {
     switch (action.type) {
         case CHANGE_HOME_DATA:
-            console.log(action)
+
             return state.merge({
                 topicList: fromJS(action.topicList),
                 articleList: fromJS(action.articleList),
@@ -24,6 +25,9 @@ export default (state = defaultState, action) => {
             })
         case ADD_ARTICLE_LIST:
             return addArticleList(state, action);
+        case CHANGE_SCROLL:
+
+            return action.value ? state.set("showScroll", true) : state.set("showScroll", false);
         default:
             return state;
     }
