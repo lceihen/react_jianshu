@@ -32,16 +32,6 @@ export default (state = defaultState, action) => {
     if (action.type === MOUSE_LEAVE) {
         return state.set('mouseIn', false)
     }
-    if (action.type === SIGN_OUT) {
-        console.log("csd")
-        //  localStorage.setItem("login", "")
-        localStorage.removeItem("login")
-        return state.merge({
-            "login": false,
-            "account": "",
-            "password": ""
-        });
-    }
     return state;
 }
 

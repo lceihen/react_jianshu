@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux'
 import { actionCreators } from './store/index'
 import { Link } from 'react-router-dom'
+import { login } from './../../pages/login/store/actionCreators'
 import {
 	HeaderWrapper,
 	Logo,
@@ -105,6 +106,9 @@ class Header extends Component {
 			</HeaderWrapper>
 		);
 	}
+	componentDidMount() {
+		this.props.Initsign()
+	}
 }
 
 const mapStateToProps = (state) => {
@@ -120,6 +124,16 @@ const mapStateToProps = (state) => {
 
 const mapDispathToProps = (dispatch) => {
 	return {
+		Initsign() {
+			if (localStorage.getItem("login")) {
+				console.log(localStorage.getItem("login"))
+				let account = JSON.parse(localStorage.getItem("login")).account;
+				let password = JSON.parse(localStorage.getItem("login")).password;
+				console.log("account", account);
+				console.log("password", password)
+				dispatch(login(account, password))
+			}
+		},
 		signout() {
 
 			dispatch(actionCreators.SignOut())
