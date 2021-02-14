@@ -3,7 +3,6 @@ import { DetailWrapper, Header, Content } from './style'
 import schoolpng from '../../statics/imgs/henshui_school.png'
 import { connect } from 'react-redux'
 import { get_detail_action } from './store/actionCreators'
-import { withRouter } from 'react-router-dom'
 class Detail extends Component {
     render() {
         return (
@@ -37,4 +36,4 @@ const mapDispatch = (dispatch) => ({
     }
 })
 
-export default connect(mapState, mapDispatch)(withRouter(Detail));
+export default connect(mapState, mapDispatch)(Detail);
