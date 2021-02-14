@@ -32,6 +32,7 @@ export const NavItem = styled.div`
 	padding: 0 15px;
 	font-size: 17px;
 	color: #333;
+	cursor:pointer;
 	&.left {
 		float: left;
 	}
@@ -103,6 +104,7 @@ export const Addition = styled.div`
 	right: 0;
 	top: 0;
 	height: 56px;
+	cursor:pointer;
 `;
 
 export const Button = styled.div`
@@ -111,6 +113,7 @@ export const Button = styled.div`
 	margin-right: 20px;
 	padding: 0 20px;
 	line-height: 38px;
+	cursor:pointer;
 	border-radius: 19px;
 	border: 1px solid #ec6149;
 	font-siz: 14px;

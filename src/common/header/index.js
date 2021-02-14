@@ -60,19 +60,20 @@ class Header extends Component {
 	}
 
 	render() {
-		const { focused, handleInputFocus, handleInputBlur, list } = this.props;
+		const { focused, handleInputFocus, handleInputBlur, list, login, signout } = this.props;
 		return (
 			<HeaderWrapper>
-				<Link to="/detail">
+				<Link to="/">
 					<Logo />
 				</Link>
 
 
 
 				<Nav>
-					<NavItem className='left active' href="/">首页</NavItem>
+					<Link to="/"><NavItem className='left active'>首页</NavItem>  </Link>
 					<NavItem className='left'>下载App</NavItem>
-					<NavItem className='right'>登陆</NavItem>
+					{login ? <NavItem onClick={signout} className='right'>退出</NavItem> : <Link to="/login"><NavItem className='right'>登录</NavItem></Link>}
+
 					<NavItem className='right'>
 						<i className="iconfont">&#xe636;</i>
 					</NavItem>
@@ -113,12 +114,16 @@ const mapStateToProps = (state) => {
 		page: state.getIn(['header', 'page']),
 		totalPage: state.getIn(['header', 'totalPage']),
 		mouseIn: state.getIn(['header', 'mouseIn']),
-
+		login: state.getIn(['login', 'login'])
 	}
 }
 
 const mapDispathToProps = (dispatch) => {
 	return {
+		signout() {
+
+			dispatch(actionCreators.SignOut())
+		},
 		handleInputFocus(list) {
 
 			(list.size === 0) && dispatch(actionCreators.getList());

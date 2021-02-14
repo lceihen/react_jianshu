@@ -1,4 +1,4 @@
-import { SREACH_FOCUS, SREACH_BLUR, CHANGE_LIST, MOUSE_ENTER, MOUSE_LEAVE, CHANGE_PAGE } from "./constants"
+import { SREACH_FOCUS, SREACH_BLUR, CHANGE_LIST, MOUSE_ENTER, MOUSE_LEAVE, CHANGE_PAGE, SIGN_OUT } from "./constants"
 import axios from 'axios'
 import { fromJS } from 'immutable'
 const changelist = (data) => ({
@@ -33,4 +33,7 @@ export const mouseLeave = () => ({
 export const changePage = (page) => ({
     type: CHANGE_PAGE,
     page
+})
+export const SignOut = () => ({
+    type: SIGN_OUT
 })

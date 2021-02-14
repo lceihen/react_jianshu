@@ -34,4 +34,5 @@ background:#3194d0;
 border-radius:15px;
 margin:20px auto;
 text-align:center;
+cursor:pointer;
 `
