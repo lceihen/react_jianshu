@@ -28,7 +28,8 @@ injectGlobal`
 	}
 	body {
 		line-height: 1;
-		min-width:1260px
+		min-width:1260px;
+		background:#eee;
 	}
 	ol, ul {
 		list-style: none;
