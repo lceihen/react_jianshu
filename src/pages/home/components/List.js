@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 import { ListItem, ListInfo, LoadMore } from './../style'
 import { connect } from 'react-redux'
 import { getMoreList } from './../store/actionCreators'
+import huge from './../../../statics/imgs/胡歌.png'
 class List extends PureComponent {
     render() {
         const { list, getMoreList, page } = this.props;
@@ -14,7 +15,7 @@ class List extends PureComponent {
                             <Link key={item.get("id")} to={"/detail/" + item.get("id")}>
 
                                 <ListItem >
-                                    <img alt="" className='pic' src={item.get("imgUrl")} />
+                                    <img alt="" className='pic' src={huge} />
                                     <ListInfo>
                                         <h3 className='title'>{item.get("title")} </h3>
                                         <p className='desc'>{item.get("desc")}</p>
