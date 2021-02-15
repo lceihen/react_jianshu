@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 
 injectGlobal`
 	html, body, div, span, applet, object, iframe,
@@ -46,4 +46,10 @@ injectGlobal`
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
+	body{
+		position:relative;
+	}
 `;
+export const Content = styled.div`
+margin-top:56px;
+`

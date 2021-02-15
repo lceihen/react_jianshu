@@ -60,7 +60,7 @@ border-bottom:1px solid #dcdcdc;
     width:125px;
     height:100px;
     float:right;
-    border-radius:10ps;
+    border-radius:10px;
 
 }
 `
@@ -121,6 +121,7 @@ border-radius:3px;
 height:300px;
 line-height:300px;
 text-align:center;
+margin-top:44px;
 `
 export const LoadMore = styled.div`
 width: 100%;
@@ -148,3 +149,45 @@ cursor:pointer;
 color:#626262;
 font-weight:100;
 `
+export const Download = styled.a.attrs({
+    href: "https://www.jianshu.com/apps?utm_medium=desktop&utm_source=index-aside-click",
+    target: "_blank"
+})`
+width:280px;
+height:80px;
+border:1px solid #dcdcdc;
+display:block;
+margin-bottom:30px;
+border-radius:6px;
+box-sizing:border-box;
+img{
+    display:inline-block;
+width:60px;
+height:60px;
+padding:10px;
+float:left;
+}
+
+`
+export const DownInfo = styled.div`
+margin-left:70px;
+display:inline-block;
+width:170px;
+height:60px;
+margin:10px;
+float:right;
+text-align:center;
+`
+export const Title = styled.div`
+font-size:15px;
+color:#333;
+display:block;
+margin:10px 0;
+`
+export const Description = styled.div`
+margin-top:4px;
+font-size:13px;
+color:#999;
+`
+
+

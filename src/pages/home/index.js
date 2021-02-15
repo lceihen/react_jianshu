@@ -1,14 +1,15 @@
 import React, { PureComponent } from 'react'
 import {
     HomeWrapper,
-    HomeLeft, HomeRight, BackTop
-
+    HomeLeft, HomeRight, BackTop,
+    Download, DownInfo, Description, Title
 } from './style'
 import { getHomeInfo, ChangeScrollTopShow } from './store/actionCreators'
 import Topic from './components/Topic'
 import List from './components/List'
 import Recommend from './components/Recommend'
 import Writer from './components/Writer'
+import App_img from './../../statics/imgs/app.png'
 
 import { connect } from 'react-redux'
 class Home extends PureComponent {
@@ -24,6 +25,13 @@ class Home extends PureComponent {
                 </HomeLeft>
                 <HomeRight>
                     <Recommend />
+                    <Download >
+                        <img src={App_img} />
+                        <DownInfo>
+                            <Title>{'下载简书手机APP >'} </Title>
+                            <Description>随时随地发现和创作内容</Description>
+                        </DownInfo>
+                    </Download>
                     <Writer />
                 </HomeRight>
                 {this.props.showScroll ? <BackTop onClick={this.handleScrollTop} >^</BackTop> : null}
