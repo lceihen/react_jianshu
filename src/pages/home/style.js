@@ -9,7 +9,7 @@ margin:0 auto;
 
 `
 export const HomeLeft = styled.div`
-margin-left:15px;
+margin-left:15px;                                                                                                                                                                                                                                                                                                                                                                                                          
 padding-top:30px;
 width:625px
 float:left;
@@ -118,10 +118,10 @@ export const WriterWrapper = styled.div`
 width:278px;
 border:1px solid #dcdcdc;
 border-radius:3px;
-height:300px;
-line-height:300px;
-text-align:center;
+height:456px;
+padding 10px;
 margin-top:44px;
+clear:both;
 `
 export const LoadMore = styled.div`
 width: 100%;
@@ -189,5 +189,61 @@ margin-top:4px;
 font-size:13px;
 color:#999;
 `
+export const WriteTitle = styled.div`
+font-size: 14px;
+color: #969696;
+height:20px;
+width:100%;
+clear:both;
+border-bottom: 1px solid #dcdcdc;
+`
+export const WrapperItem = styled.div`
+height:60px;
+width:100%;
+clear:both;
+margin-top:10px;
+box-sizing:border-box;
+padding:7px 0 7px 0;
+cursor:pointer;
+border-bottom: 1px solid #dcdcdc;
+img{
+    width:48px;
+    height:48px;
+    display:inline-block;
+    border-radius:24px;
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;
+}
+`
+export const WrapperInfo = styled.div`
+display:inline-block;
+float:left;
+height:48px;
+width:200px;
+margin-left:20px;
+`
+export const WrapperName = styled.div`
+font-size:14px;
+margin-top: 7px;
+`
+export const WrapperDesc = styled.div`
+margin-top: 7px;
+font-size: 12px;
+color: #969696;
+`
+export const WrapperMore = styled.div`
+height:40px;
+width:266px;
+font-size: 13px;
+color: #787878;
+border: 1px solid #dcdcdc;
+margin:20px auto;
+clear:both;
+border-radius:10px;
+text-align:center;
+line-height:40px;
+cursor:pointer;
+a{display:block;width:100%;height:100%;text-decoration:none;color: #787878;}
 
-
+`

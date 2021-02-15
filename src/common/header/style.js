@@ -44,6 +44,7 @@ export const NavItem = styled.div`
 	&.active {
 		color: #ea6f5a;
 	}
+	a{display:block;width:100%;height:100%;text-decoration:none;color: #787878;}
 `;
 
 export const SearchWrapper = styled.div`

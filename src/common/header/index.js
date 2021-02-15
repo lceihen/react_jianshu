@@ -72,7 +72,7 @@ class Header extends Component {
 
 				<Nav>
 					<Link to="/"><NavItem className='left active'>首页</NavItem>  </Link>
-					<NavItem className='left'>下载App</NavItem>
+					<NavItem className='left' ><a href="https://www.jianshu.com/apps?utm_medium=desktop&utm_source=index-aside-click">下载App</a></NavItem>
 					{login ? <NavItem onClick={signout} className='right'>退出</NavItem> : <Link to="/login"><NavItem className='right'>登录</NavItem></Link>}
 
 					<NavItem className='right'>
@@ -126,11 +126,8 @@ const mapDispathToProps = (dispatch) => {
 	return {
 		Initsign() {
 			if (localStorage.getItem("login")) {
-				console.log(localStorage.getItem("login"))
 				let account = JSON.parse(localStorage.getItem("login")).account;
 				let password = JSON.parse(localStorage.getItem("login")).password;
-				console.log("account", account);
-				console.log("password", password)
 				dispatch(login(account, password))
 			}
 		},
